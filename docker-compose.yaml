@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    image: python:3.7-slim
+    container_name: fastapi-demo-app
+    hostname: fastapi-demo-app
+    working_dir: /app
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8000
+    ports:
+      - 8000:8000
+    volumes:
+      - ./app:/app
+    command: /app/scripts/start.sh
